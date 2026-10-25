@@ -1,0 +1,42 @@
+[package]
+name = "spacebox"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.87"
+description = "A fast disk usage treemap viewer"
+license = "MIT"
+repository = "https://github.com/shian07/spacebox"
+readme = "README.md"
+categories = ["visualization", "filesystem", "gui"]
+keywords = ["disk", "usage", "treemap", "du", "storage"]
+# Required by the .desktop file and the macOS bundle name.
+authors = ["shian07 <shian07@users.noreply.github.com>"]
+default-run = "spacebox"
+
+[features]
+# glibc allocator tuning + fontconfig warm-up. On by default for GNU/Linux;
+# disable with `--no-default-features` (musl, BSDs) or build on another OS.
+default = ["glibc"]
+glibc = []
+
+[dependencies]
+fltk = { version = "=1.5.23", features = ["no-pango"] }
+trash = "5.2.9"
+
+[build-dependencies]
+# Must be unconditional: build dependencies are compiled for the *host*, so a
+# target-gated dependency is missing when cross-compiling to Windows from Linux.
+# `build.rs` checks CARGO_CFG_TARGET_OS and only embeds on Windows targets.
+winresource = "0.1"
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+panic = "abort"
+
+[profile.dist]
+inherits = "release"
+# Smaller + faster startup when shipping binaries in a CI release.
+lto = "fat"

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Spacebox
+GenericName=Disk Usage Analyzer
+Comment=Find what is eating your disk space
+Comment[de]=Herausfinden, was Speicherplatz verbraucht
+Comment[es]=Descubre qué está consumiendo tu disco
+Comment[fr]=Découvrez ce qui occupe votre disque
+Comment[hi]=पता लगाएँ कि आपकी डिस्क की जगह क्या खा रहा है
+Exec=spacebox %f
+Icon=spacebox
+Terminal=false
+Categories=Utility;FileTools;
+Keywords=disk;usage;space;storage;du;treemap;size;cleanup;analyzer;
+StartupNotify=true
+StartupWMClass=spacebox
+MimeType=inode/directory;
+SingleMainWindow=true
