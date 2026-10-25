@@ -11,7 +11,7 @@ PKG_DESC="Fast disk usage treemap viewer"
 PKG_SUMMARY="A fast treemap disk usage viewer (du/Baobab alternative)"
 PKG_URL="https://github.com/shian07/SpaceBox"
 PKG_LICENSE="MIT"
-PKG_MAINTAINER="${SPACEBOX_MAINTAINER:-Spacebox contributors <maintainers@example.com>}"
+PKG_MAINTAINER="${SPACEBOX_MAINTAINER:-shian07 <shian07@users.noreply.github.com>}"
 
 # Human-facing app name and desktop id, matching packaging/*.desktop.
 APP_NAME="Spacebox"
